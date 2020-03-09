@@ -61,7 +61,7 @@ else
   end
 end
 
-def position_taken?(index)
+def position_taken?(@index)
   if @board[@index] == " "
     return false
   elsif @board[@index] == ""
@@ -79,7 +79,7 @@ def valid_move?(@index)
   end
 end
 
-def move(index, player)
+def move(@index, player)
   @board[@index] = player
 end
 
