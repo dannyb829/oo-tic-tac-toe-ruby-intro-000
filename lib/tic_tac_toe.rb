@@ -74,7 +74,7 @@ def position_taken?(index)
 end
 
 def valid_move?(index)
-  if index.between?(0, 8) && !position_taken?
+  if index.between?(0, 8) && !position_taken?(index)
     return true
   end
 end
@@ -87,8 +87,8 @@ def turn
   puts "Please enter 1-9:"
   user_input = gets.strip
   input_to_index(user_input)
-  if valid_move? == true
-    move
+  if valid_move?(index) == true
+    move(index, player = current_player)
     display_board
   else
     puts "invalid move try again"
