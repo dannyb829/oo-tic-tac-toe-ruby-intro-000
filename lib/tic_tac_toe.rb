@@ -61,26 +61,26 @@ else
   end
 end
 
-def position_taken?(@index)
-  if @board[@index] == " "
+def position_taken?(index)
+  if @board[index] == " "
     return false
-  elsif @board[@index] == ""
+  elsif @board[index] == ""
     return false
-  elsif @board[@index] == nil
+  elsif @board[index] == nil
     return false
-  else @board[@index] == "X" || @board[@index] == "O"
+  else @board[index] == "X" || @board[index] == "O"
     return true
   end
 end
 
-def valid_move?(@index)
-  if @index.between?(0, 8) && !position_taken?(index)
+def valid_move?(index)
+  if index.between?(0, 8) && !position_taken?(index)
     return true
   end
 end
 
-def move(@index, player)
-  @board[@index] = player
+def move(index, player)
+  @board[index] = player
 end
 
 def turn
